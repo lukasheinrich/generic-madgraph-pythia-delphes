@@ -1,2 +1,2 @@
-# Standard Monte Carlo Production for RECAST 
+# MG5 Pythia (Delphes) Monte Carlo Production for pheno RECAST 
 
