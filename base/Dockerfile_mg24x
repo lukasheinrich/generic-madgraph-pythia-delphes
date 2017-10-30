@@ -43,7 +43,8 @@ WORKDIR /code
 RUN curl -sSL https://launchpad.net/mg5amcnlo/2.0/${MG5_EPOCH}/+download/MG5_aMC_v${MG5VERSION}.tar.gz | tar -xzvf - && \
     ln -s $PWD/MG5_aMC_*/bin/mg5_aMC /usr/local/bin && \
     ln -s $PWD/MG5_aMC_*/bin/mg5 /usr/local/bin
-RUN echo "install lhapdf6" | mg5
-RUN echo "install pythia8" | mg5
-RUN echo "install MadAnalysis5" | mg5
-RUN echo "install Delphes" | mg5
+
+RUN echo "n"|mg5
+RUN echo "install pythia-pgs"|mg5
+RUN echo "install Delphes"|mg5
+
