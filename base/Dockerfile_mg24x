@@ -48,3 +48,10 @@ RUN echo "n"|mg5
 RUN echo "install pythia-pgs"|mg5
 RUN echo "install Delphes"|mg5
 
+ARG LHAPDF_VERSION=6.1.6
+RUN curl -sSL http://www.hepforge.org/archive/lhapdf/LHAPDF-${LHAPDF_VERSION}.tar.gz | tar -xzvf - && \
+    cd LHAPDF-${LHAPDF_VERSION} && \
+    ./configure && make  && make install
+
+RUN echo 'export PYTHONPATH=/usr/local/lib64/python2.7/site-packages:$PYTHONPATH' >> ~/.bashrc && \
+    echo 'export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
